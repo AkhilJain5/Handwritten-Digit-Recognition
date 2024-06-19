@@ -50,6 +50,6 @@ Countributers and Teammate in this project
 | Sachin Rajawat | https://github.com/Sachin-71 | https://www.linkedin.com/in/sachin-rajawat-119ba4237/ |
 | Pranav Gupta | https://github.com/pranav412-code |  |
 | Sarang Kishor Masurkar  | https://github.com/SarangMasurkar | https://www.linkedin.com/in/sarang-masurkar-643819246/ |
-| Shahnaz Ali | https://github.com/S-ali24 |  |
+| Shahnaz Ali | https://github.com/S-ali24 | https://www.linkedin.com/in/s-ali-3439b2314?trk=contact-info |
 
 
