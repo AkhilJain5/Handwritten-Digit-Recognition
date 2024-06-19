@@ -1,2 +1,1 @@
-# Handwritten-Digit-Recognition
-Infosys Springboard - Handwritten Digit Recognition with LeNet5 Model in PyTorch 
+[README_INFO.md](https://github.com/user-attachments/files/15895587/README_INFO.md)
