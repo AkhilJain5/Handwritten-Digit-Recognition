@@ -26,7 +26,7 @@ We uses a number of open source projects to work properly:
 - [Extended MNIST](https://www.nist.gov/itl/products-and-services/emnist-dataset) - EMNIST Dataset Is A Set of Handwritten Character Digit
 - [CNN](https://en.wikipedia.org/wiki/Convolutional_neural_network#Architecture) - Convolutional Neural Network Architecture
 - [MLP](https://en.wikipedia.org/wiki/Multilayer_perceptron) - Multilayer Perceptron
-- [Streamlit](https://streamlit.io/) - Transforms ML Models Into Engaging Web Apps
+- [Flask](https://flask.palletsprojects.com/en/3.0.x/) - A Backend Micro-Framework Written In Python For The Rapid Development Process
 
 
 
@@ -37,7 +37,10 @@ import Libraries as according_to_project :
 - [Numpy](https://pytorch.org/) 
 - [Pandas](https://pandas.pydata.org/)
 - [Matplotlib](https://pytorch.org/) 
-- [Streamlit](https://streamlit.io/)
+- [Flask](https://flask.palletsprojects.com/en/3.0.x/)
+
+## Webpage
+ Check out our [webpage](https://handwrittendigitrecognitionwithlenet5modelinpytorc.durablesites.com/?pt=NjY2ZTg5NDVmM2RmYzg5ZGU1MmU2YTAxOjE3MTg1MjM2MjIuNzUzOnByZXZpZXc=) where we deployed our model.
 
 
 ## Team
@@ -51,5 +54,7 @@ Countributers and Teammate in this project
 | Pranav Gupta | https://github.com/pranav412-code | https://www.linkedin.com/in/pranav-gupta-45724b22a/ |
 | Sarang Kishor Masurkar  | https://github.com/SarangMasurkar | https://www.linkedin.com/in/sarang-masurkar-643819246 |
 | Shahnaz Ali | https://github.com/S-ali24 | https://www.linkedin.com/in/s-ali-3439b2314?trk=contact-info |
+
+o |
 
 
