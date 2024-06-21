@@ -40,8 +40,10 @@ import Libraries as according_to_project :
 - [Matplotlib](https://pytorch.org/) 
 - [Flask](https://flask.palletsprojects.com/en/3.0.x/)
 
-## Webpage
- Check out our [webpage](https://handwrittendigitrecognitionwithlenet5modelinpytorc.durablesites.com/?pt=NjY2ZTg5NDVmM2RmYzg5ZGU1MmU2YTAxOjE3MTg1MjM2MjIuNzUzOnByZXZpZXc=) where we deployed our model.
+## Website
+ Check out our [website](https://handwrittendigitrecognitionwithlenet5modelinpytorc.durablesites.com/?pt=NjY2ZTg5NDVmM2RmYzg5ZGU1MmU2YTAxOjE3MTg1MjM2MjIuNzUzOnByZXZpZXc=) 
+Where we have our deployed our project's model.
+
 
 
 ## Team
