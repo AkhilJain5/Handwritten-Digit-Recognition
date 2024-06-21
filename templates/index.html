@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Handwritten Digit Recognition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="label-box">
+        <h1>Handwritten Digit Recognition</h1>
+    </div>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <label for="model_choice">Select Model:</label>
+        <select name="model_choice" id="model_choice">
+            <option value="mlp">MLP Model</option>
+            <option value="cnn">Simple CNN Model</option>
+            <option value="lenet">LeNet-5 Model</option>
+        </select>
+        <input type="file" name="file" accept="image/*">
+        <input type="submit" value="Upload and Predict">
+    </form>
+</body>
+</html>
+

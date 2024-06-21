@@ -1,0 +1,114 @@
+body {
+    font-family: century-gothic, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-image: url('https://img.freepik.com/premium-photo/background-numbers-from-zero-nine-numbers-texture_333900-9341.jpg?w=740');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px;
+    margin: 0;
+    color: #fff;
+}
+
+.label-box {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.label-box h1 {
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+label, select {
+    display: block;
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #333;
+}
+
+input[type="file"] {
+    display: block;
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+input[type="submit"] {
+    display: block;
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 20px auto;
+    background-color: #060055;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #060055;
+}
+
+.result-box {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.result-box h2 {
+    color: #2a5ca8;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.result-box img {
+    border: 3px solid #2a5ca8;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: #f2f2f2;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
