@@ -11,7 +11,7 @@ Using various Deep learnig Architecture and then deploying the model
 
 ## Features
 
-> Trying various deep learnig models 
+> Trying various deep learnig models
 > Improving model accuracy
 > Deploying all models together in one web app
 > Making evaluation Report of the project
@@ -33,6 +33,7 @@ We uses a number of open source projects to work properly:
 ## Installation
 
 import Libraries as according_to_project :
+
 - [PyTorch](https://pytorch.org/) 
 - [Numpy](https://pytorch.org/) 
 - [Pandas](https://pandas.pydata.org/)
