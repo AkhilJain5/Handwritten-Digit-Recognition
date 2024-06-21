@@ -55,6 +55,5 @@ Countributers and Teammate in this project
 | Sarang Kishor Masurkar  | https://github.com/SarangMasurkar | https://www.linkedin.com/in/sarang-masurkar-643819246 |
 | Shahnaz Ali | https://github.com/S-ali24 | https://www.linkedin.com/in/s-ali-3439b2314?trk=contact-info |
 
-o |
 
 
