@@ -1,3 +1,4 @@
+/*declare various attributes of the body element*/
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 400;
@@ -10,7 +11,7 @@ body {
     margin: 0;
     color: #fff;
 }
-
+/* declare various attributes of the label box element */
 .label-box {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
@@ -22,19 +23,19 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     text-align: center;
 }
-
+/* define the values of properties of the heading of the label box */
 .label-box h1 {
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin: 0;
 }
-
+/* define a container */
 .container {
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
 }
-
+/* declare the attributes of the upload and draw container */
 .upload-container, .draw-container {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
@@ -43,7 +44,7 @@ body {
     width: 40%;
     text-align: center;
 }
-
+/* define the colors of the heading of upload and draw containers */
 .upload-container h2, .draw-container h2 {
     color: #000;
 }
@@ -67,7 +68,7 @@ body {
     -moz-appearance: none;
     color: #333;
 }
-
+/* declare the attributes of file upload button */
 .file-upload {
     display: block;
     margin: 20px auto;
@@ -89,7 +90,7 @@ body {
     display: inline-block;
     padding: 8px 20px;
 }
-
+/* define of the values of the properties of the upload,clear and predict buttons */
 .btn-upload, .btn-clear, .btn-predict {
     display: inline-block;
     margin: 10px;
@@ -103,11 +104,11 @@ body {
     text-decoration: none;
     transition: background-color 0.3s;
 }
-
+ /* define the bg colors of upload, clear and predict buttons on hovering */
 .btn-upload:hover, .btn-clear:hover, .btn-predict:hover {
     background-color: #080080;
 }
-
+/* declare various attributes of the results container */
 .result-container {
     background-color: #fff;
     padding: 20px;
@@ -116,31 +117,31 @@ body {
     max-width: 800px;
     margin: 0 auto;
 }
-
+/* declare the attributes of result box */
 .result-box {
     text-align: center;
     margin-bottom: 20px;
 }
-
+/* declare the attributes of the results box's heading*/
 .result-box h2 {
     color: #2a5ca8;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin-bottom: 10px;
 }
-
+/* declare the attributes of the predicted output */
 .predicted-output {
     color: #000;
     font-size: 36px;
     margin-bottom: 20px;
 }
-
+/* declare the attributes of the result box image */
 .result-box img {
     border: 3px solid #2a5ca8;
     border-radius: 10px;
     margin-top: 20px;
     max-width: 100%;
 }
-
+/* declare the attributes of the go back button */
 .btn-go-back {
     display: block;
     text-align: center;
@@ -152,7 +153,7 @@ body {
     border-radius: 5px;
     transition: background-color 0.3s;
 }
-
+/* declare the attributes of the go back button on hovering */
 .btn-go-back:hover {
     background-color: #080;
     color: #fff;
