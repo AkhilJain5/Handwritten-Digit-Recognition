@@ -66,15 +66,15 @@ class LeNet5(nn.Module):
 
 # Load the models
 mlp_model = MLP()
-mlp_model.load_state_dict(torch.load('C:/Users/hp/OneDrive/Documents/GitHub/Handwritten-Digit-Recognition/MNIST Models/mlp_model.pth'))
+mlp_model.load_state_dict(torch.load('C:/Users/hp/OneDrive/Documents/GitHub/Handwritten-Digit-Recognition/Models/mlp_model.pth'))
 mlp_model.eval()
 
 cnn_model = SimpleCNN()
-cnn_model.load_state_dict(torch.load('C:/Users/hp/OneDrive/Documents/GitHub/Handwritten-Digit-Recognition/MNIST Models/simple_cnn_model.pth'))
+cnn_model.load_state_dict(torch.load('C:/Users/hp/OneDrive/Documents/GitHub/Handwritten-Digit-Recognition/Models/simple_cnn_model.pth'))
 cnn_model.eval()
 
 lenet_model = LeNet5()
-lenet_model.load_state_dict(torch.load('C:/Users/hp/OneDrive/Documents/GitHub/Handwritten-Digit-Recognition/MNIST Models/lenet5_model.pth'))
+lenet_model.load_state_dict(torch.load('C:/Users/hp/OneDrive/Documents/GitHub/Handwritten-Digit-Recognition/Models/lenet5_model.pth'))
 lenet_model.eval()
 
 # Define the transformation to be applied to the input image
