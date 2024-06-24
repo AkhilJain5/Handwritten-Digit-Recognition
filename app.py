@@ -5,11 +5,13 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torchvision.transforms as transforms
 import os
+import base64
+from io import BytesIO
 
 app = Flask(__name__)
-app.secret_key = 'secret_key'  
+app.secret_key = 'secret_key'
 
-# Define the models (ensure these match the definitions you used during training)
+# Define the models 
 class MLP(nn.Module):
     def __init__(self):
         super(MLP, self).__init__()
@@ -97,6 +99,12 @@ def evaluate_single_image(model, image_path):
         predicted_label = predicted.item()
     return predicted_label
 
+def preprocess_canvas_image(image_data):
+    image = Image.open(BytesIO(base64.b64decode(image_data.split(',')[1])))
+    image = transform(image)
+    image = image.unsqueeze(0)  # Add batch dimension
+    return image
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
@@ -109,15 +117,15 @@ def index():
             return redirect(request.url)
         if file:
             model_choice = request.form.get('model_choice')
-            
+
             # Create the 'static/uploads' directory if it doesn't exist
             upload_folder = os.path.join('static', 'uploads')
             if not os.path.exists(upload_folder):
                 os.makedirs(upload_folder)
-            
+
             image_path = os.path.join(upload_folder, file.filename)
             file.save(image_path)
-            
+
             if model_choice == 'mlp':
                 predicted_label = evaluate_single_image(mlp_model, image_path)
             elif model_choice == 'cnn':
@@ -127,10 +135,38 @@ def index():
             else:
                 flash('Invalid model choice', 'error')
                 return redirect(request.url)
-            
+
             return render_template('result.html', prediction=predicted_label, image_path=image_path)
-    
+
     return render_template('index.html')
+
+@app.route('/predict_canvas', methods=['POST'])
+def predict_canvas():
+    model_choice = request.form.get('model_choice_canvas')
+    canvas_data = request.form.get('canvasData')
+
+    if not canvas_data:
+        flash('No drawing data', 'error')
+        return redirect(url_for('index'))
+
+    image = preprocess_canvas_image(canvas_data)
+
+    if model_choice == 'mlp':
+        model = mlp_model
+    elif model_choice == 'cnn':
+        model = cnn_model
+    elif model_choice == 'lenet':
+        model = lenet_model
+    else:
+        flash('Invalid model choice', 'error')
+        return redirect(url_for('index'))
+
+    with torch.no_grad():
+        output = model(image)
+        _, predicted = torch.max(output.data, 1)
+        predicted_label = predicted.item()
+
+    return render_template('result.html', prediction=predicted_label, image_path=None)
 
 if __name__ == '__main__':
     app.run(debug=True)
