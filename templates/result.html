@@ -8,10 +8,20 @@
     <div class="label-box">
         <h1>Prediction Result</h1>
     </div>
-    <div class="result-box">
-        <h2>Predicted Label: {{ prediction }}</h2>
-        <img src="{{ image_path }}" alt="Uploaded Image">
+
+    <div class="result-container">
+        <div class="result-box">
+            <h2>Predicted Label:</h2>
+            <div class="predicted-output">{{ prediction }}</div>
+            {% if image_path %}
+                <img src="{{ image_path }}" alt="Uploaded Image">
+            {% else %}
+                <p> </p>
+            {% endif %}
+        </div>
+        <a href="/" class="btn-go-back">Go back</a>
     </div>
-    <a href="/">Go back</a>
 </body>
 </html>
+
+

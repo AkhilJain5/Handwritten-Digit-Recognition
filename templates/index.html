@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
     <title>Handwritten Digit Recognition</title>
@@ -8,16 +8,85 @@
     <div class="label-box">
         <h1>Handwritten Digit Recognition</h1>
     </div>
-    <form action="/" method="post" enctype="multipart/form-data">
-        <label for="model_choice">Select Model:</label>
-        <select name="model_choice" id="model_choice">
-            <option value="mlp">MLP Model</option>
-            <option value="cnn">Simple CNN Model</option>
-            <option value="lenet">LeNet-5 Model</option>
-        </select>
-        <input type="file" name="file" accept="image/*">
-        <input type="submit" value="Upload and Predict">
+    
+    <div class="container">
+        <div class="upload-container">
+            <h2>Upload your file:</h2>
+            <form action="/" method="post" enctype="multipart/form-data">
+                <div class="select-style">
+                    <select name="model_choice" id="model_choice">
+                        <option value="mlp">MLP Model</option>
+                        <option value="cnn">Simple CNN Model</option>
+                        <option value="lenet">LeNet-5 Model</option>
+                    </select>
+                </div>
+                <label class="file-upload">
+                    <input type="file" name="file" accept="image/*">
+                    <span>Choose file</span>
+                </label>
+                <button class="btn-upload" type="submit">Upload and Predict</button>
+            </form>
+        </div>
+        
+        <div class="draw-container">
+            <h2>Draw your digit:</h2>
+            <div class="canvas-container">
+                <canvas id="canvas" width="280" height="280" style="border: 1px solid #fff;"></canvas>
+                <br>
+                <button class="btn-clear">Clear</button>
+                <button class="btn-predict">Predict</button>
+            </div>
+        </div>
+    </div>
+    
+    <form id="canvasForm" action="/predict_canvas" method="post">
+        <input type="hidden" name="canvasData" id="canvasData">
+        <input type="hidden" name="model_choice_canvas" id="model_choice_canvas">
     </form>
+
+    <script>
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        var drawing = false;
+
+        // Set black background for the canvas
+        ctx.fillStyle = "black";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Set white color for the drawing marker
+        ctx.strokeStyle = "white";
+        ctx.lineWidth = 10; // Adjust this value for wider brush
+
+        canvas.addEventListener('mousedown', function(e) {
+            drawing = true;
+            ctx.beginPath();
+            ctx.moveTo(e.offsetX, e.offsetY);
+        });
+
+        canvas.addEventListener('mousemove', function(e) {
+            if (drawing) {
+                ctx.lineTo(e.offsetX, e.offsetY);
+                ctx.stroke();
+            }
+        });
+
+        canvas.addEventListener('mouseup', function() {
+            drawing = false;
+        });
+
+        document.querySelector('.btn-clear').addEventListener('click', function() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "black";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.strokeStyle = "white"; // Reset the drawing color to white after clearing
+        });
+
+        document.querySelector('.btn-predict').addEventListener('click', function() {
+            var dataURL = canvas.toDataURL();
+            document.getElementById('canvasData').value = dataURL;
+            document.getElementById('model_choice_canvas').value = document.getElementById('model_choice').value;
+            document.getElementById('canvasForm').submit();
+        });
+    </script>
 </body>
 </html>
-
