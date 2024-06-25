@@ -1,54 +1,57 @@
+/* This file is a css stylesheet for our project that defines the layout and visual styling of the html elements of our interface*/
 /*declare various attributes of the body element*/
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;                                                   /* Set the font family for the entire page */
     font-weight: 400;
     font-style: normal;
-    background-image: url('https://img.freepik.com/premium-photo/background-numbers-from-zero-nine-numbers-texture_333900-9341.jpg?w=740');
-    background-size: cover;
+    background-image: url('https://img.freepik.com/premium-photo/background-numbers-from-zero-nine-numbers-texture_333900-9341.jpg?w=740') /* Set the background image to a URL */
+    background-size: cover;                                                                                       /* Set the background size to cover the entire page */
     background-repeat: no-repeat;
     background-position: center;
     padding: 20px;
     margin: 0;
-    color: #fff;
+    color: #fff;                                                                                                 /* Set the text color to white */
 }
 /* declare various attributes of the label box element */
 .label-box {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);                                                                         /* Set the background color to a dark gray with 70% opacity */                                   
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 40px;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);                                                                     /* Add a box shadow to the label box */
     text-align: center;
 }
-/* define the values of properties of the heading of the label box */
+/* define the values of properties of the heading within the label box */
 .label-box h1 {
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #fff;                                                                                                /* Set the text color to white */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);                                                               /* Add a text shadow to the heading */
     margin: 0;
 }
-/* define a container */
+/* define a container  element that displays its children in a flex layout */
 .container {
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
 }
-/* declare the attributes of the upload and draw container */
+
+/* declare the attributes of the upload and draw container in the middle of the index page */
+
 .upload-container, .draw-container {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.9);                                                           /* Set the background color to a white with 90% opacity */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);                                                              /* Add a box shadow to the container */
     width: 40%;
     text-align: center;
 }
-/* define the colors of the heading of upload and draw containers */
+/* define the colors of the heading (black) of upload and draw containers */
 .upload-container h2, .draw-container h2 {
     color: #000;
 }
-
+/* define the attributes of the select drop dowm*/
 .select-style {
     margin-bottom: 20px;
     width: 100%;
@@ -57,6 +60,7 @@ body {
     border-radius: 5px;
 }
 
+/* Define the styling for the select element inside the upload file container */
 .select-style select {
     width: 100%;
     padding: 10px;
@@ -68,7 +72,7 @@ body {
     -moz-appearance: none;
     color: #333;
 }
-/* declare the attributes of file upload button */
+/* declare the attributes of file upload element */
 .file-upload {
     display: block;
     margin: 20px auto;
@@ -108,7 +112,10 @@ body {
 .btn-upload:hover, .btn-clear:hover, .btn-predict:hover {
     background-color: #080080;
 }
-/* declare various attributes of the results container */
+
+/* Stlying the results page of our interface*/
+
+/* declare various attributes of the results container on the results page */
 .result-container {
     background-color: #fff;
     padding: 20px;
