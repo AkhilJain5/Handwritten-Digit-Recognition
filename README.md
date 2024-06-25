@@ -11,10 +11,10 @@ Using various Deep learnig Architecture and then deploying the model
 
 ## Features
 
-> Trying various deep learnig models
-> Improving model accuracy
-> Deploying all models together in one web app
-> Making evaluation Report of the project
+ > Trying various deep learnig models
+ > Improving model accuracy
+ > Deploying all models together in one web app
+ > Making evaluation Report of the project
 
 ## Tech
 
@@ -39,6 +39,15 @@ import Libraries as according_to_project :
 - [Pandas](https://pandas.pydata.org/)
 - [Matplotlib](https://pytorch.org/) 
 - [Flask](https://flask.palletsprojects.com/en/3.0.x/)
+
+>OR
+
+Install the dependencies as :
+```sh
+pip install -r requirements.txt
+```
+
+  
 
 ## Website
  Check out our [website](https://handwrittendigitrecognitionwithlenet5modelinpytorc.durablesites.com/?pt=NjY2ZTg5NDVmM2RmYzg5ZGU1MmU2YTAxOjE3MTg1MjM2MjIuNzUzOnByZXZpZXc=) 
