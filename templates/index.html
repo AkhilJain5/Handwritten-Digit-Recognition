@@ -1,91 +1,99 @@
- <!DOCTYPE html>
-<html>
-<head>
-    <title>Handwritten Digit Recognition</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<!DOCTYPE html> <!-- Defines the document type as HTML -->
+<html> <!-- Start of the HTML document -->
+<head> <!-- Head section of the HTML document -->
+    <title>Handwritten Digit Recognition</title> <!-- Title of the webpage -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> <!-- Link to an external stylesheet -->
 </head>
-<body>
-    <div class="label-box">
-        <h1>Handwritten Digit Recognition</h1>
+
+<body> <!-- Body section of the HTML document -->
+    <div class="label-box"> <!-- Div element with class "label-box" -->
+        <h1>Handwritten Digit Recognition</h1> <!-- Heading displaying the title of the webpage -->
     </div>
     
-    <div class="container">
-        <div class="upload-container">
-            <h2>Upload your file:</h2>
-            <form action="/" method="post" enctype="multipart/form-data">
-                <div class="select-style">
-                    <select name="model_choice" id="model_choice">
-                        <option value="mlp">MLP Model</option>
-                        <option value="cnn">Simple CNN Model</option>
+    <div class="container"> <!-- Div element with class "container" -->
+        <div class="upload-container"> <!-- Div element for file upload section -->
+            <h2>Upload your file:</h2> <!-- Heading for file upload section -->
+            <form action="/" method="post" enctype="multipart/form-data"> <!-- Form for file upload with post method -->
+                <div class="select-style"> <!-- Div for dropdown selection -->
+                    <select name="model_choice" id="model_choice"> <!-- Dropdown menu for selecting model options -->
                         <option value="lenet">LeNet-5 Model</option>
+                        <option value="cnn">Simple CNN Model</option>
+                        <option value="mlp">MLP Model</option>
                     </select>
                 </div>
-                <label class="file-upload">
-                    <input type="file" name="file" accept="image/*">
-                    <span>Choose file</span>
+                <label class="file-upload"> <!-- Label for file upload input -->
+                    <input type="file" name="file" accept="image/*"> <!-- Input field for file upload -->
+                    <span>Choose file</span> <!-- Text for file selection -->
                 </label>
-                <button class="btn-upload" type="submit">Upload and Predict</button>
+                <button class="btn-upload" type="submit">Upload and Predict</button> <!-- Button for submitting the form -->
             </form>
         </div>
         
-        <div class="draw-container">
-            <h2>Draw your digit:</h2>
-            <div class="canvas-container">
-                <canvas id="canvas" width="280" height="280" style="border: 1px solid #fff;"></canvas>
+        <div class="draw-container"> <!-- Div element for drawing section -->
+            <h2>Draw your digit:</h2> <!-- Heading for drawing section -->
+            <div class="canvas-container"> <!-- Div for canvas drawing area -->
+                <canvas id="canvas" width="280" height="280" style="border: 1px solid #fff;"></canvas> <!-- Canvas element for drawing -->
                 <br>
-                <button class="btn-clear">Clear</button>
-                <button class="btn-predict">Predict</button>
+                <button class="btn-clear">Clear</button> <!-- Button to clear the drawing -->
+                <button class="btn-predict">Predict</button> <!-- Button to predict the drawn digit -->
             </div>
         </div>
     </div>
     
-    <form id="canvasForm" action="/predict_canvas" method="post">
-        <input type="hidden" name="canvasData" id="canvasData">
-        <input type="hidden" name="model_choice_canvas" id="model_choice_canvas">
+    <form id="canvasForm" action="/predict_canvas" method="post"> <!-- Form for submitting canvas drawing data -->
+        <input type="hidden" name="canvasData" id="canvasData"> <!-- Hidden input field for storing canvas data -->
+        <input type="hidden" name="model_choice_canvas" id="model_choice_canvas"> <!-- Hidden input field for storing model choice -->
     </form>
 
-    <script>
-        var canvas = document.getElementById('canvas');
-        var ctx = canvas.getContext('2d');
-        var drawing = false;
-
+    <script> <!-- JavaScript section -->
+        // JavaScript code for drawing on the canvas and submitting the drawing for prediction
+       
+        var canvas = document.getElementById('canvas'); // Get the canvas element
+        var ctx = canvas.getContext('2d'); // Get the 2D drawing context of the canvas
+        var drawing = false; // Variable to track drawing state
+    
         // Set black background for the canvas
         ctx.fillStyle = "black";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-
+    
         // Set white color for the drawing marker
         ctx.strokeStyle = "white";
         ctx.lineWidth = 10; // Adjust this value for wider brush
-
+    
+        // Event listener for mouse down to start drawing
         canvas.addEventListener('mousedown', function(e) {
             drawing = true;
             ctx.beginPath();
             ctx.moveTo(e.offsetX, e.offsetY);
         });
-
+    
+        // Event listener for mouse move to draw lines
         canvas.addEventListener('mousemove', function(e) {
             if (drawing) {
                 ctx.lineTo(e.offsetX, e.offsetY);
                 ctx.stroke();
             }
         });
-
+    
+        // Event listener for mouse up to stop drawing
         canvas.addEventListener('mouseup', function() {
             drawing = false;
         });
-
+    
+        // Event listener for clear button to clear the canvas
         document.querySelector('.btn-clear').addEventListener('click', function() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.fillStyle = "black";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             ctx.strokeStyle = "white"; // Reset the drawing color to white after clearing
         });
-
+    
+        // Event listener for predict button to submit the drawing for prediction
         document.querySelector('.btn-predict').addEventListener('click', function() {
-            var dataURL = canvas.toDataURL();
-            document.getElementById('canvasData').value = dataURL;
-            document.getElementById('model_choice_canvas').value = document.getElementById('model_choice').value;
-            document.getElementById('canvasForm').submit();
+            var dataURL = canvas.toDataURL(); // Get the drawn image data
+            document.getElementById('canvasData').value = dataURL; // Set the image data in a hidden field
+            document.getElementById('model_choice_canvas').value = document.getElementById('model_choice').value; // Set the selected model in a hidden field
+            document.getElementById('canvasForm').submit(); // Submit the form for prediction
         });
     </script>
 </body>
