@@ -1,27 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Prediction Result</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<!DOCTYPE html> <!-- Defines the document type as HTML -->
+<html> <!-- Start of the HTML document -->
+<head> <!-- Head section of the HTML document -->
+    <title>Prediction Result</title> <!-- Title of the webpage -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> <!-- Link to an external stylesheet -->
 </head>
-<body>
-    <div class="label-box">
-        <h1>Prediction Result</h1>
+
+<body> <!-- Body section of the HTML document -->
+    <div class="label-box"> <!-- Div element with class "label-box" -->
+        <h1>Prediction Result</h1> <!-- Heading displaying the title of the webpage -->
     </div>
 
-    <div class="result-container">
-        <div class="result-box">
-            <h2>Predicted Label:</h2>
-            <div class="predicted-output">{{ prediction }}</div>
-            {% if image_path %}
-                <img src="{{ image_path }}" alt="Uploaded Image">
+    <div class="result-container"> <!-- Div element with class "result-container" -->
+        <div class="result-box"> <!-- Div element for prediction result box -->
+            <h2>Predicted Label:</h2> <!-- Heading for predicted label -->
+            <div class="predicted-output">{{ prediction }}</div> <!-- Display the predicted output -->
+            {% if image_path %} <!-- Conditional statement to check if an image path is available -->
+                <img src="{{ image_path }}" alt="Uploaded Image"> <!-- Display the uploaded image -->
             {% else %}
-                <p> </p>
+                <p> </p> <!-- Display empty paragraph if no image available -->
             {% endif %}
         </div>
-        <a href="/" class="btn-go-back">Go back</a>
+        <a href="/" class="btn-go-back">Go back</a> <!-- Link to go back to the main page -->
     </div>
 </body>
 </html>
-
-
