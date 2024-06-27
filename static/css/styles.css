@@ -47,16 +47,18 @@ body {
     width: 40%;
     text-align: center;
 }
-/* define the colors of the heading (black) of upload and draw containers */
+
+/* define the colors of the heading  of upload and draw containers (black) */
+
 .upload-container h2, .draw-container h2 {
     color: #000;
 }
-/* define the attributes of the select drop dowm*/
+/* define the attributes of the select drop dowm inside the upload file container*/
 .select-style {
     margin-bottom: 20px;
     width: 100%;
     overflow: hidden;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc;                                                                                /* Add a 1px solid border with a light gray color */
     border-radius: 5px;
 }
 
@@ -67,27 +69,27 @@ body {
     background: transparent;
     border: none;
     outline: none;
-    appearance: none;
-    -webkit-appearance: none;
+    appearance: none;                                                                              /* Remove the default appearance of the select element */
+    -webkit-appearance: none;                                                                      /* Remove the default appearance of the select element for WebKit browsers */
     -moz-appearance: none;
-    color: #333;
+    color: #333;                                                                                   /* Set the text color to a dark gray  */
 }
-/* declare the attributes of file upload element */
+/* declare the attributes of file upload element inside the upload container */
 .file-upload {
     display: block;
     margin: 20px auto;
     width: 100%;
     max-width: 200px;
     padding: 10px;
-    background-color: #060055;
-    color: #fff;
+    background-color: #060055;                                                     /* Set the background color to a dark blue */
+    color: #fff;                                                                    /* Set the text color to white */
     text-align: center;
     border-radius: 5px;
-    cursor: pointer;
+    cursor: pointer;                                                              /* Change the cursor to a pointer on hover */
 }
-
+                                                                                   /* Hide the file input element */
 .file-upload input[type="file"] {
-    display: none;
+    display: none;                                                                 /* Set the display to none to hide the element */
 }
 
 .file-upload span {
@@ -99,30 +101,30 @@ body {
     display: inline-block;
     margin: 10px;
     padding: 12px 24px;
-    background-color: #060055;
-    color: #fff;
+    background-color: #060055;                                                     /* Set the background color to a dark blue */
+    color: #fff;                                                                   /* Set the text color to white */       
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s;                                            /* Add a transition effect to the background color on hover */
 }
  /* define the bg colors of upload, clear and predict buttons on hovering */
 .btn-upload:hover, .btn-clear:hover, .btn-predict:hover {
-    background-color: #080080;
+    background-color: #080080;                                                  /* Change the background color to a darker blue on hover */
 }
 
 /* Stlying the results page of our interface*/
 
 /* declare various attributes of the results container on the results page */
 .result-container {
-    background-color: #fff;
+    background-color: #fff;                                                    /* Set the background color to white */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);                                   /* Add a box shadow to the container */
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto;                                                           /* Center the container horizontally */
 }
 /* declare the attributes of result box */
 .result-box {
@@ -131,19 +133,19 @@ body {
 }
 /* declare the attributes of the results box's heading*/
 .result-box h2 {
-    color: #2a5ca8;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #2a5ca8;                                                         /* Set the text color to a blue */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);                            /* Add a text shadow to the heading */
     margin-bottom: 10px;
 }
 /* declare the attributes of the predicted output */
 .predicted-output {
-    color: #000;
+    color: #000;                                                            /* Set the text color to black */
     font-size: 36px;
     margin-bottom: 20px;
 }
 /* declare the attributes of the result box image */
 .result-box img {
-    border: 3px solid #2a5ca8;
+    border: 3px solid #2a5ca8;                                              /* Add a 3px solid border with a blue color  to the images */
     border-radius: 10px;
     margin-top: 20px;
     max-width: 100%;
@@ -153,15 +155,15 @@ body {
     display: block;
     text-align: center;
     margin-top: 20px;
-    color: #fff;
+    color: #fff;                                                            /* Set the text color to white  */
     text-decoration: none;
-    background-color: #2a5ca8;
+    background-color: #2a5ca8;                                              /* Set the background color of the button to a blue color (#2a5ca8) */
     padding: 10px 20px;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s;                                     /* Add a transition effect to the background color to make it change smoothly on hover */
 }
 /* declare the attributes of the go back button on hovering */
 .btn-go-back:hover {
-    background-color: #080;
-    color: #fff;
+    background-color: #080;                                                /* Change the background color of the button to a darker blue color on hovering */
+    color: #fff;                                                           /* Keep the text color white on hover */
 }
