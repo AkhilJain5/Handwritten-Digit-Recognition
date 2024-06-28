@@ -1,3 +1,4 @@
+# Group 1 Internship Project
 # Handwritten-Digit-Recognition
 ## _Infosys Springboard - Handwritten Digit Recognition with LeNet5 Model in PyTorch_
 
