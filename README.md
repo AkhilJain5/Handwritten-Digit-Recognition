@@ -28,6 +28,7 @@ We uses a number of open source projects to work properly:
 - [CNN](https://en.wikipedia.org/wiki/Convolutional_neural_network#Architecture) - Convolutional Neural Network Architecture
 - [MLP](https://en.wikipedia.org/wiki/Multilayer_perceptron) - Multilayer Perceptron
 - [Flask](https://flask.palletsprojects.com/en/3.0.x/) - A Backend Micro-Framework Written In Python For The Rapid Development Process
+- [Docker](https://www.docker.com/) - A software platform to build, test, and deploy applications quickly
 
 
 
