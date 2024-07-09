@@ -1,23 +1,20 @@
-# Use an official Python runtime as a parent image
-FROM python:3.9-slim
+# Use the official Python image from the Docker Hub
+FROM python:3.8
 
-# Set the working directory in the container
+# Set the working directory
 WORKDIR /app
 
-# Copy requirements.txt first to leverage Docker cache
-COPY requirements.txt /app/
+# Copy the current directory contents into the working directory
+COPY . .
 
-# Install any needed packages specified in requirements.txt
-RUN pip install -r requirements.txt
+# Install the Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Make port 80 available to the world outside this container
-EXPOSE 80
+# Expose port 5000 for the Flask app
+EXPOSE 5000
 
-# Define environment variable
-ENV NAME World
+# Set the environment variable to ensure output is shown in the console
+ENV FLASK_APP app.py
 
-# Run app.py when the container launches
-CMD ["python", "springboard.py"]
-
-
-
+# Run the Flask app
+CMD ["flask","run", "--host=0.0.0.0"]
