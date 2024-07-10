@@ -52,7 +52,7 @@ pip install -r requirements.txt
   
 
 ## Website
- Check out our [website](https://handwrittendigitrecognitionwithlenet5modelinpytorc.durablesites.com/?pt=NjY2ZTg5NDVmM2RmYzg5ZGU1MmU2YTAxOjE3MTg1MjM2MjIuNzUzOnByZXZpZXc=) 
+ Check out our [website](https://handwrittendigitrecognition.durablesites.com/?pt=NjY2ZTg5NDVmM2RmYzg5ZGU1MmU2YTAxOjE3MjA0OTI3MDkuNzg5OnByZXZpZXc=#) 
 Where we have deployed our project's model.
 
 
